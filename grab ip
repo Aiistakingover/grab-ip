@@ -1,1 +1,14 @@
+import socket
 
+# ask user for permission to retrieve IP address
+permission = input("Do you want to share your IP address? (Y/N) ")
+
+if permission == "Y":
+    # retrieve IP address of user
+    hostname = socket.gethostname()
+    ip_address = socket.gethostbyname(hostname)
+
+    # print the IP address of user
+    print("Your IP address is:", ip_address)
+else:
+    print("You did not give permission to retrieve your IP address.")
